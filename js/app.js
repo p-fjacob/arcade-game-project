@@ -59,13 +59,26 @@ Player.prototype.handleInput = function(keyPress) {
    if(keyPress == 'down' && this.y < 405) {
        this.y += 83;
    }
+   if(this.y < 0) {
+       setTimeout(function() {
+           player.x = 202;
+           player.y = 405;
+       }, 600);
+   }
 }
 
 
-// Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
+let allEnemies = [];
+let enemyLocation = [63, 147, 230];
+
+enemyLocation.forEach(function (locationY) {
+    enemy = new Enemy(0, locationY, 200);
+    allEnemies.push(enemy);
+});
+
 // Place the player object in a variable called player
 
+let player = new Player(202, 405);
 
 
 // This listens for key presses and sends the keys to your
