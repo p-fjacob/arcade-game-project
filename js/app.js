@@ -47,7 +47,18 @@ Player.prototype.render = function() {
 }
 
 Player.prototype.handleInput = function(keyPress) {
-   if(keyPress == 'left') 
+   if(keyPress == 'left' && this.x > 0) {
+       this.x -= 102;
+   } 
+   if(keyPress == 'right' && this.x < 405) {
+       this.x += 102;
+   }
+   if(keyPress == 'up' && this.y > 0) {
+       this.y -= 83;
+   }
+   if(keyPress == 'down' && this.y < 405) {
+       this.y += 83;
+   }
 }
 
 
