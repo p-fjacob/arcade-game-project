@@ -1,5 +1,5 @@
 // Enemies our player must avoid
-const Enemy = function(x, y, speed) {
+const Enemy = function (x, y, speed) {
     this.x = x;
     this.y = y;
     this.speed = speed;
@@ -8,7 +8,7 @@ const Enemy = function(x, y, speed) {
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
-Enemy.prototype.update = function(dt) {
+Enemy.prototype.update = function (dt) {
     this.x =+ this.speed * dt;
 
     if (this.x > 510) {
@@ -26,27 +26,27 @@ Enemy.prototype.update = function(dt) {
 };
 
 // Draw the enemy on the screen, required method for game
-Enemy.prototype.render = function() {
+Enemy.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 // Now write your own player class
-const Player = function(x, y) {
+const Player = function (x, y) {
     this.x = x;
     this.y = y;
     this.sprite = 'images/char-boy.png'
 }
 // This class requires an update(), render() and
 // a handleInput() method.
-Player.prototype.update = fuction(dt); {
+Player.prototype.update = function (dt) {
 
 }
 
-Player.prototype.render = function() {
+Player.prototype.render = function () {
     ctx.drawImage(Resources.get(this.player), this.x, this.y);
 }
 
-Player.prototype.handleInput = function(keyPress) {
+Player.prototype.handleInput = function (keyPress) {
    if(keyPress == 'left' && this.x > 0) {
        this.x -= 102;
    } 
@@ -60,7 +60,7 @@ Player.prototype.handleInput = function(keyPress) {
        this.y += 83;
    }
    if(this.y < 0) {
-       setTimeout(function() {
+       setTimeout(function () {
            player.x = 202;
            player.y = 405;
        }, 600);
@@ -83,7 +83,7 @@ let player = new Player(202, 405);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
-document.addEventListener('keyup', function(e) {
+document.addEventListener('keyup', function (e) {
     var allowedKeys = {
         37: 'left',
         38: 'up',
