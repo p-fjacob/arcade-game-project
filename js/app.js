@@ -4,12 +4,12 @@ const Enemy = function (x, y, speed) {
     this.y = y;
     this.speed = speed;
     this.sprite = 'images/enemy-bug.png';
-};
+}
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function (dt) {
-    this.x =+ this.speed * dt;
+    this.x += this.speed * dt;
 
     if (this.x > 510) {
         this.x = -50;
@@ -23,12 +23,12 @@ Enemy.prototype.update = function (dt) {
             player.x = 202;
             player.y = 405;
     }
-};
+}
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-};
+}
 
 // Now write your own player class
 const Player = function (x, y) {
