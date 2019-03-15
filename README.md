@@ -1,5 +1,7 @@
 # Classic Arcade Game Clone Project
 
+Welcome to the Frogger like Arcade Game Clone I developed as  the third task of my Udacity FEND (Frontend Web Developer Nanodegree) program.
+
 ## Table of Contents
 
 - [Instructions](#instructions)
@@ -7,14 +9,25 @@
 
 ## Instructions
 
-Use this [rubric](https://review.udacity.com/#!/rubrics/15/view) for self-checking your submission.
+The games starts to run right a way when you open it in your browser. Of course you notice that by the enemie bugs that cross the screen horizontally.
 
-Make sure the functions you write are **object-oriented** - either class functions (like `Player` and `Enemy`) or class prototype functions such as `Enemy.prototype.checkCollisions`. Also make sure that the keyword `this` is used appropriately within your class and class prototype functions to refer to the object the function is called upon.
+Start playing by moving the little boy with the arrow keys:
 
-Your **README.md** file should be updated with instructions on both how to 1. Run and 2. Play your arcade game.
+arrow left: step one tile left
+arrow right: step one tile right
+arrow up: step one tile up
+arrow down: step one tile down
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+Your goal is to lead the boy right away to the water by not beeing touched by the bugs crossing.
+
+When reaching the water, after a short timeout your player will bereplaced to the starting point. 
+The same thin occurs immediately when beeing hit by an enemy.
+
 
 ## Contributing
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+I am contributing to the Udacity FEND team for providing us the starter code which contains a lot of support such as the game engine, the graphics and the index.html
+
+All the work we had to do concentrates on the app.js file.
+
+Have fun, Frank
