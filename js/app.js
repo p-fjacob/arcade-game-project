@@ -1,4 +1,4 @@
-// Enemies our player must avoid
+// Enemies class
 const Enemy = function (x, y, speed) {
     this.x = x;
     this.y = y;
@@ -30,7 +30,7 @@ Enemy.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
 
-// Now write your own player class
+// Player class
 const Player = function (x, y) {
     this.x = x;
     this.y = y;
