@@ -30,6 +30,9 @@ Enemy.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
 
+let score = 0;
+let scoreMessage = document.querySelector('h3');
+
 // Player class
 const Player = function (x, y) {
     this.x = x;
@@ -60,6 +63,7 @@ Player.prototype.handleInput = function (keyPress) {
        this.y += 83;
    }
    if(this.y < 0) {
+       score = score += 1;
        setTimeout(function () {
            player.x = 202;
            player.y = 405;
