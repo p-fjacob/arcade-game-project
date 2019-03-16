@@ -10,8 +10,9 @@ const Enemy = function (x, y, speed) {
 let score = 0;
 let scoreMessage = document.querySelector('h3');
 
-// Update the enemy's position, required method for game
-// Parameter: dt, a time delta between ticks
+// Update the enemy's position
+// If player and enemy collide, replace the player in start positio
+// and decrease the "Feed-Hydration_Level" 
 Enemy.prototype.update = function (dt) {
     this.x += this.speed * dt;
 
@@ -31,7 +32,7 @@ Enemy.prototype.update = function (dt) {
     }
 }
 
-// Draw the enemy on the screen, required method for game
+// Draw the enemies on the screen
 Enemy.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
@@ -42,16 +43,17 @@ const Player = function (x, y) {
     this.y = y;
     this.sprite = 'images/char-boy.png'
 }
-// This class requires an update(), render() and
-// a handleInput() method.
+// Update the players status
 Player.prototype.update = function (dt) {
 
 }
-
+// Display the player on screen
 Player.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
-
+// Make player beeing controled by arrow keys
+// Take care of the player not leaving the game board
+// If player touches the water increase the "Feet-Hydration-Level"
 Player.prototype.handleInput = function (keyPress) {
    if(keyPress == 'left' && this.x > 0) {
        this.x -= 102;
@@ -75,7 +77,8 @@ Player.prototype.handleInput = function (keyPress) {
    }
 }
 
-
+// Create an array of enemies and create enemies for each 
+// of the three vertical positions (y-axis)
 let allEnemies = [];
 let enemyLocation = [63, 147, 230];
 
