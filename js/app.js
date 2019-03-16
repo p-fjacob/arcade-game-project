@@ -6,6 +6,10 @@ const Enemy = function (x, y, speed) {
     this.sprite = 'images/enemy-bug.png';
 }
 
+// Variables to use in the score message
+let score = 0;
+let scoreMessage = document.querySelector('h3');
+
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function (dt) {
@@ -19,7 +23,9 @@ Enemy.prototype.update = function (dt) {
     if (player.x < this.x + 80 &&
         player.x + 80 > this.x &&
         player.y < this.y + 60 &&
-        60 + player.y > this.y) {
+        60 + player.y > this.y){
+            score = score - 1 ;
+            scoreMessage.innerText = `Raise your Feet-Hydration. Current Level = ${score}.`;   
             player.x = 202;
             player.y = 405;
     }
@@ -29,9 +35,6 @@ Enemy.prototype.update = function (dt) {
 Enemy.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
-
-let score = 0;
-let scoreMessage = document.querySelector('h3');
 
 // Player class
 const Player = function (x, y) {
@@ -63,7 +66,8 @@ Player.prototype.handleInput = function (keyPress) {
        this.y += 83;
    }
    if(this.y < 0) {
-       score = score += 1;
+       score = score + 1 ;
+       scoreMessage.innerText = `Raise your Feet-Hydration. Current Level = ${score}.`;
        setTimeout(function () {
            player.x = 202;
            player.y = 405;
