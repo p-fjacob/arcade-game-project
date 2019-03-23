@@ -18,7 +18,7 @@ Enemy.prototype.update = function (dt) {
 
     if (this.x > 510) {
         this.x = -50;
-        this.speed = 100 + Math.floor(Math.random() * 222);
+        this.speed = 100 + Math.floor(Math.random() * 777);
     }
 
     if (player.x < this.x + 80 &&
